@@ -37,6 +37,7 @@
     <section-gifts></section-gifts>
     <div class="couple-pic"></div>
     <section-rsvp></section-rsvp>
+    <section-faq></section-faq>
   </div>
 </template>
 
@@ -108,11 +109,11 @@ export default {
 }
 
 .right-top-banner {
-  background-color: #858872;
+  background-color: var(--base-green);
 }
 
 .left-bottom-banner {
-  background-color: #C2C4BA;
+  background-color: var(--secondary-green);
 }
 
 .col {

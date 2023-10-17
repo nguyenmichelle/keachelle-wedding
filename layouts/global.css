@@ -16,10 +16,6 @@
   url(~assets/Brandon/Brandon_light.otf) format("opentype");
 }
 
-:root {
-  --smaller: .75;
-}
-
 .row {
   margin: 0px !important;
 }

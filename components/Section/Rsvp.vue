@@ -1,5 +1,5 @@
 <template>
-  <Section id="rsvp" background-color="#B8A283" white-text="true" title="KINDLY RESPOND">
+  <Section id="rsvp" background-color="var(--base-brown)" white-text="true" title="KINDLY RESPOND">
     <v-row>
       <v-col cols="12" class="text-center">
         <p>Please RSVP by April 20, 2024</p>

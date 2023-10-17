@@ -6,7 +6,7 @@
       density="prominent"
       fixed
       app
-      color="#f7f6f3"
+      color="var(--base-color)"
     >
       <v-toolbar-title class="header-title">{{ title }}</v-toolbar-title>
       <v-spacer />
@@ -33,7 +33,7 @@
     <v-footer
       :absolute="!fixed"
       app
-      color="#f7f6f3"
+      color="var(--base-color)"
     >
       <span>&copy; {{ new Date().getFullYear() }} - Developed by Michelle Nguyen</span>
     </v-footer>

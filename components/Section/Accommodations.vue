@@ -1,5 +1,5 @@
 <template>
-  <Section id="accommodations" background-color="#f7f6f3" title="">
+  <Section id="accommodations" background-color="var(--base-color)" title="">
     <v-row class="justify-center align-center">
       <v-col cols="8" class="text-center">
         <h1>Flights</h1>
