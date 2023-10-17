@@ -30,13 +30,19 @@ h1 {
 }
 
 h2 {
-  font-family: "Brandon Grotesque";
+  font-family: "La Luxes";
+  font-size: 45px;
   text-transform: uppercase;
 }
 
 a {
   font-family: "Mories";
   text-decoration: none !important;
+}
+
+span {
+  font-family: "Brandon Grotesque";
+  text-transform: uppercase;
 }
 
 .container {
@@ -70,6 +76,10 @@ p {
   }
 
   h2 {
+    font-size: calc(2rem * var(--smaller));
+  }
+
+  span {
     font-size: calc(1rem * var(--smaller));
   }
 }

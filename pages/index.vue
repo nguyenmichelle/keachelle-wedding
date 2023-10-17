@@ -10,21 +10,23 @@
         <v-col cols="6"><div class="side-banner left-top"></div></v-col>
         <v-col cols="6" class="text-center d-flex justify-center align-center right-top-banner">
           <div>
-            <h1>THE DAY BEFORE</h1>
-            <h2>Tea Ceremony
+            <h2>THE DAY BEFORE</h2>
+            <br>
+            <span>Tea Ceremony
             <br>Welcome Party
             <br>Rehearsal Dinner
-            <br>Cocktail Attire</h2>
+            <br>Cocktail Attire</span>
           </div>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="6" class="text-center d-flex justify-center align-center left-bottom-banner">
           <div>
-            <h1>THE NEXT DAY</h1>
-            <h2>Recovery/Check-out
-              <br>Optional hang at the resort pool
-            <br>Comfy/Casual Attire</h2>
+            <h2>THE NEXT DAY</h2>
+            <br>
+            <span>Recovery/Check-out
+              <br>Optional pool hang
+            <br>Comfy/Casual Attire</span>
           </div>
         </v-col>
         <v-col cols="6"><div class="side-banner right-bottom"></div></v-col>
