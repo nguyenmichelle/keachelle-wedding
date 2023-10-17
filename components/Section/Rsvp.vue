@@ -22,7 +22,9 @@
 
 <style>
   .sheet {
-    width: 500px;
+    width: 80%;
     padding: 60px;
   }
+
+
 </style>
