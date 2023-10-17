@@ -69,6 +69,10 @@ export default {
           title: 'RSVP',
           to: '#rsvp'
         },
+        {
+          title: 'FAQs',
+          to: '#faq'
+        }
       ],
       miniVariant: false,
       right: true,
