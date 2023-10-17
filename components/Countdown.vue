@@ -61,9 +61,6 @@ export default {
 
 <style scoped>
 /* general styling */
-:root {
-  --smaller: .75;
-}
 .container {
   margin: 0 auto;
   text-align: center;

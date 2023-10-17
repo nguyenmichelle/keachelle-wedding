@@ -1,7 +1,7 @@
 <template>
   <Section id="accommodations" background-color="#f7f6f3" title="">
     <v-row class="justify-center align-center">
-      <v-col cols="12" class="text-center">
+      <v-col cols="8" class="text-center">
         <h1>Flights</h1>
         <br>
         <p><b>CANCUN INTERNATIONAL AIRPORT (CUN)</b>

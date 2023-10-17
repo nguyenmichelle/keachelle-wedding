@@ -16,6 +16,14 @@
   url(~assets/Brandon/Brandon_light.otf) format("opentype");
 }
 
+:root {
+  --smaller: .75;
+}
+
+.row {
+  margin: 0px !important;
+}
+
 h1 {
   font-family: "La Luxes";
   font-size: 55px;
@@ -54,4 +62,14 @@ a {
 p {
   font-family: "Brandon Grotesque";
   text-transform: uppercase;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(2rem * var(--smaller));
+  }
+
+  h2 {
+    font-size: calc(1rem * var(--smaller));
+  }
 }
