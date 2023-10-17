@@ -16,7 +16,7 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
-        <v-list v-for="item in items">
+        <v-list v-for="item in items" :key="item.title">
           <v-list-item>
             <router-link :to="item.to">
               <v-list-item>{{ item.title }}</v-list-item>
@@ -58,8 +58,8 @@ export default {
           to: '#accommodations'
         },
         {
-          title: 'Bridal Party',
-          to: '#bridal-party'
+          title: 'Wedding Party',
+          to: '#wedding-party'
         },
         {
           title: 'Gifts/Registry',

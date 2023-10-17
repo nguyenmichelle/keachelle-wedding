@@ -33,7 +33,7 @@
       </v-row>
     </v-container>
     <section-accommodations></section-accommodations>
-    <section-bridal-party></section-bridal-party>
+    <section-wedding-party></section-wedding-party>
     <section-gifts></section-gifts>
     <div class="couple-pic"></div>
     <section-rsvp></section-rsvp>
