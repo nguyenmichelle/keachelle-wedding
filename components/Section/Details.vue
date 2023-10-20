@@ -12,7 +12,7 @@
           QUINTANA ROO, MEXICO<br><br>
         <b>RECEPTION</b> TO FOLLOW<br>
           JARDÍN DEL MAR<br>
-          QUINTANA ROO, MEXICO</p>
+          QUINTANA ROO, MEXICO</p><br>
       </v-col>
       <v-col cols="12"><countdown></countdown>
       </v-col>
