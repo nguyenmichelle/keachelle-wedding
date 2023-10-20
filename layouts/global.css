@@ -11,10 +11,17 @@
 }
 
 @font-face {
-  font-family: "Brandon Grotesque";
+  font-family: "Brandon Grotesque Light";
   src: local("Brandon"),
   url(~assets/Brandon/Brandon_light.otf) format("opentype");
 }
+
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: local("Brandon"),
+  url(~assets/Brandon/Brandon_reg.otf) format("opentype");
+}
+
 
 .row {
   margin: 0px !important;
@@ -31,13 +38,18 @@ h2 {
   text-transform: uppercase;
 }
 
+h3 {
+  font-family: "Brandon Grotesque";
+  text-transform: uppercase;
+}
+
 a {
   font-family: "Mories";
   text-decoration: none !important;
 }
 
-span {
-  font-family: "Brandon Grotesque";
+p {
+  font-family: "Brandon Grotesque Light";
   text-transform: uppercase;
 }
 
@@ -61,7 +73,7 @@ span {
   border: thin solid #CCCCCC;
 }
 
-p {
+span {
   font-family: "Brandon Grotesque";
   text-transform: uppercase;
 }

@@ -12,10 +12,9 @@
           <div>
             <h2>THE DAY BEFORE</h2>
             <br>
-            <span>Tea Ceremony
-            <br>Welcome Party
+            <span>Welcome Party
             <br>Rehearsal Dinner
-            <br>Cocktail Attire</span>
+            <br><i>Cocktail Attire</i></span>
           </div>
         </v-col>
       </v-row>
@@ -26,7 +25,7 @@
             <br>
             <span>Recovery/Check-out
               <br>Optional pool hang
-            <br>Comfy/Casual Attire</span>
+            <br><i>Comfy/Casual Attire</i></span>
           </div>
         </v-col>
         <v-col cols="6"><div class="side-banner right-bottom"></div></v-col>

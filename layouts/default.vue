@@ -8,7 +8,7 @@
       app
       color="var(--base-color)"
     >
-      <v-toolbar-title class="header-title">{{ title }}</v-toolbar-title>
+      <v-toolbar-title><nuxt-link to="/" class="nav-title">{{ title }}</nuxt-link></v-toolbar-title>
       <v-spacer />
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -16,13 +16,11 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
-        <v-list v-for="item in items" :key="item.title">
-          <v-list-item>
-            <router-link :to="item.to">
+        <router-link v-for="item in items" :key="item.title" :to="item.to">
+        <v-list>
               <v-list-item>{{ item.title }}</v-list-item>
-            </router-link>
-          </v-list-item>
         </v-list>
+        </router-link>
       </v-menu>
     </v-app-bar>
     <v-main>
@@ -50,28 +48,36 @@ export default {
       fixed: false,
       items: [
         {
+          title: 'Home',
+          to: '/'
+        },
+        {
           title: 'Details',
-          to: '#details'
+          to: '/#details'
         },
         {
           title: 'Accommodations',
-          to: '#accommodations'
+          to: '/#accommodations'
+        },
+        {
+          title: 'Resort Details',
+          to: '/resort'
         },
         {
           title: 'Wedding Party',
-          to: '#wedding-party'
+          to: '/#wedding-party'
         },
         {
           title: 'Gifts/Registry',
-          to: '#gifts'
+          to: '/#gifts'
         },
         {
           title: 'RSVP',
-          to: '#rsvp'
+          to: '/#rsvp'
         },
         {
           title: 'FAQs',
-          to: '#faq'
+          to: '/#faq'
         }
       ],
       miniVariant: false,
@@ -84,7 +90,8 @@ export default {
 </script>
 
 <style>
-  .header-title {
-    font-family: 'La Luxes'
+  .nav-title {
+    color: black !important;
+    font-family: 'La Luxes' !important;
   }
 </style>

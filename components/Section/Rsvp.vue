@@ -2,7 +2,7 @@
   <Section id="rsvp" background-color="var(--base-brown)" white-text="true" title="KINDLY RESPOND">
     <v-row>
       <v-col cols="12" class="text-center">
-        <p>Please RSVP by April 20, 2024</p>
+        <p>Please RSVP by April 20, 2024</p><br>
       </v-col>
       <v-col cols="12" class=" d-flex justify-center align-center">
         <v-sheet class="sheet mx-auto" rounded>
