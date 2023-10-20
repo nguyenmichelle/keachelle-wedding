@@ -86,8 +86,4 @@ span {
   h2 {
     font-size: calc(2rem * var(--smaller));
   }
-
-  span {
-    font-size: calc(1rem * var(--smaller));
-  }
 }
