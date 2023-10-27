@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Invitee {
+  id                      Int     @id
+  full_name               String
+  first_name              String
+  last_name               String
+  address_line_1          String?
+  address_line_2          String?
+  city                    String?
+  state                   String?
+  postal_code             String?
+  country                 String?
+  parent_id               Int?
+  email                   String?
+  number                  String?
+  attending_welcome_party Boolean?
+  attending_wedding       Boolean?
+  modify_date             DateTime?
+}

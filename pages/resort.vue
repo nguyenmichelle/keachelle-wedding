@@ -105,7 +105,7 @@
           <span>
           <ul>
             <li>Luxurious accommodations with exclusive DreamBed</li>
-            <li>Daily breakfast, kunch, and dinner at hotel restaurants during regular operational hours</li>
+            <li>Daily breakfast, lunch, and dinner at hotel restaurants during regular operational hours</li>
             <li>Unlimited international and local liquors by the glass at hotel restaurants and bars during regular
               operational hours
             </li>

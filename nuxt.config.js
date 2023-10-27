@@ -4,6 +4,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  serverMiddleware: [
+    '~/api/index.js'
+  ],
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: 'Michelle & Keaton Wedding',
@@ -42,7 +46,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "nuxt-lodash"
   ],
+
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
