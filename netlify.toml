@@ -1,7 +1,7 @@
 # Redirect rules for michelleandkeaton.com
 [[redirects]]
   from = "/api/*"
-  to = "http://michelleandkeaton.com/:splat"
+  to = "http://michelleandkeaton.com/api/:splat"
   status = 200
 
 [[redirects]]
