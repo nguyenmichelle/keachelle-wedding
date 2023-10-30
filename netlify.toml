@@ -1,11 +1,11 @@
 # Redirect rules for michelleandkeaton.com
 [[redirects]]
   from = "/api/*"
-  to = "http://michelleandkeaton.com/api/:splat"
+  to = "https://michelleandkeaton.com/api/:splat"
   status = 200
 
 [[redirects]]
   from = "/*"
-  to = "http://michelleandkeaton.com/:splat"
+  to = "https://michelleandkeaton.com/:splat"
   status = 301
   force = true
