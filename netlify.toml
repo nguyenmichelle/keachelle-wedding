@@ -9,3 +9,11 @@
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[build]
+command = "npm run build && npm prisma generate"
+publish = "dist"
+functions = "functions"
+
+[build.environment]
+PRISMA_CLIENT_PATH = "./node_modules/.prisma/client"

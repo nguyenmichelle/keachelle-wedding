@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.3",
-    "prisma": "^5.4.2"
+    "prisma": "^5.5.2"
   }
 }
