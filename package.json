@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "generate-prisma": "prisma generate",
-    "build": "npm run generate-prisma && nuxt build",
+    "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "postinstall": "prisma generate"
