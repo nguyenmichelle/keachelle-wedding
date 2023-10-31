@@ -5,7 +5,7 @@
         <p>Please RSVP by April 20, 2024</p><br>
       </v-col>
       <v-col cols="12" class=" d-flex justify-center align-center">
-        <v-sheet class="sheet mx-auto" rounded ref="rsvpSheet">
+        <v-sheet class="sheet" rounded ref="rsvpSheet">
           <div v-if="page < 3">
             <div v-if="!showEvents">
               <div>
@@ -59,7 +59,8 @@
               <h2>Thank You For Your RSVP!</h2>
             </v-row>
             <div>
-              <v-sheet rounded :style="'border: 1px solid lightgrey;'">
+              <v-row class="d-flex justify-center">
+              <v-sheet rounded :style="'border: 1px solid lightgrey; padding: 10px;'">
                 <v-row class="d-flex text-center justify-center mt-3">
                   Want a copy of your responses and event info?<br><br></v-row>
                 <v-row class="d-flex text-center align-baseline justify-center">
@@ -69,10 +70,11 @@
                     ></v-text-field>
                   </v-col>
                   <v-col cols="4" class="ml-5">
-                    <v-btn outlined block class="mt-2" @click="sendEmail">Submit</v-btn>
+                    <v-btn outlined block class="mt-2" @click="sendEmail">Send</v-btn>
                   </v-col>
                 </v-row>
               </v-sheet>
+              </v-row>
               <r-s-v-p-events-and-responses :page="page" :current-rsvp-group="currentRsvpGroup" ref="rsvpBottom"
                                             :showOptions="false"></r-s-v-p-events-and-responses>
             </div>
@@ -221,7 +223,7 @@ export default {
 <style>
 .sheet {
   width: 80%;
-  padding: 60px;
+  padding: 40px;
 }
 
 .result-group {

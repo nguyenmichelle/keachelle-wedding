@@ -64,13 +64,13 @@ export default {
       events: {
         1: {
           title: 'Welcome Party',
-          time: 'Wednesday, August 21, 2024<br> 6:00 PM - 7:00 PM',
+          time: '<b>Wednesday, August 21, 2024</b><br> 6:00 PM - 7:00 PM',
           place: 'Royalton Riviera Cancun<br>' +
             'Km 332 Calle Manzana 102 Lote 15, Cancún, Q.R. 77500, Mexico',
           attire: 'Casual Cocktail'
         }, 2: {
           title: 'Church Ceremony + <br>Wedding Reception',
-          time: 'Ceremony: 5:00 PM - 6:00 PM<br>Cocktail Hour: 6:00 PM - 7:00 PM<br>Reception 7:00 PM - 1:00 AM',
+          time: '<b>Thursday, August 22, 2024</b><br>Ceremony // 5:00 PM - 6:00 PM<br>Cocktail Hour // 6:00 PM - 7:00 PM<br>Reception // 7:00 PM - 1:00 AM',
           place: 'Jardín del Mar<br>Carretera Federal 307 Cancun-Playa del Carmen Km 332,15, SM31, MZ 03, Cancún, Mexico',
           attire: 'Cocktail formal attire<br>The theme is <b>floral paradise</b>'
         }
