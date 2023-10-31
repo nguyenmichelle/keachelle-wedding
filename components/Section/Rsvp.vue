@@ -207,8 +207,6 @@ export default {
 
         // Scroll to the top of the element
         if (rsvpSheet != undefined) {
-          console.log(this.$refs.rsvpSheet.scrollTop)
-          console.log(this.$refs.rsvpSheet)
           this.$router.push('/#rsvp')
         }
       })

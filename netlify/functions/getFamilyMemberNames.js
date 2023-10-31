@@ -1,7 +1,7 @@
-const mysql = require('mysql2/promise')
+const mysql = require('mysql2')
 
 exports.handler = async (event, context) => {
-  const pool = mysql.createPool({
+  const dbConfig = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -10,8 +10,10 @@ exports.handler = async (event, context) => {
       // Provide SSL/TLS options here
       // Example options (customize to match your SSL/TLS configuration):
       rejectUnauthorized: false
-    }
-  });
+    }}
+
+  const pool = mysql.createPool(dbConfig);
+  const promisePool = pool.promise();
 
   try {
     if (event.httpMethod !== 'GET') {
@@ -23,7 +25,7 @@ exports.handler = async (event, context) => {
 
     const idString = event.queryStringParameters.query;
 
-    const [rows, fields] = await pool.query(`select id, full_name, email, attending_welcome_party, attending_wedding
+    const [rows, fields] = await promisePool.query(`select id, full_name, email, attending_welcome_party, attending_wedding
                                              from Invitee
                                              where id = '${idString}'
                                                 or parent_id = '${idString}'
@@ -39,6 +41,6 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ error: error }),
     };
   } finally {
-    pool.end()
+    await pool.end()
   }
 };
