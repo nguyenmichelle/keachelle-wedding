@@ -6,8 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "pgenerate": "prisma generate"
+    "generate": "nuxt generate"
   },
   "prisma": {
     "seed": "node prisma/seed_1.js"
