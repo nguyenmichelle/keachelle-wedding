@@ -90,3 +90,6 @@ sw.*
 *.swp
 
 .env
+
+# Local Netlify folder
+.netlify

@@ -126,7 +126,7 @@ export default {
     async searchRecords () {
       this.loading = true
       try {
-        const response = await axios.get('/api/searchInvitee', {
+        const response = await axios.get('/.netlify/functions/searchInvitee', {
           params: {
             query: this.query, // Replace with your value
           },
@@ -162,7 +162,7 @@ export default {
     async updateEvents (id) {
       this.loading = true
       try {
-        const response = await axios.get('/api/getFamilyMemberNames', {
+        const response = await axios.get('/.netlify/functions/getFamilyMemberNames', {
           params: {
             query: id, // Replace with your value
           },
@@ -187,10 +187,11 @@ export default {
     async submitRsvp () {
       this.loading = true
       try {
-        await axios.get('/api/submitRsvp', {
+        const response = await axios.get('/.netlify/functions/submitRsvp', {
           params: this.currentRsvpGroup,
         })
         this.loading = false
+        console.log('RSVP Updated:', response.data);
       } catch (error) {
         console.error('Error calling server method:', error)
       }
