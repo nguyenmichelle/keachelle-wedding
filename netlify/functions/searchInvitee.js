@@ -1,9 +1,8 @@
 // netlify/functions/searchInvitee.js
+const mysql = require('mysql2/promise')
 
 exports.handler = async (event, context) => {
-  const mysql = require('mysql2');
-
-  const dbConfig = {
+  const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -13,10 +12,7 @@ exports.handler = async (event, context) => {
       // Example options (customize to match your SSL/TLS configuration):
       rejectUnauthorized: false
     }
-  };
-
-  const pool = mysql.createPool(dbConfig);
-  const promisePool = pool.promise();
+  });
 
   try {
     if (event.httpMethod !== 'GET') {
@@ -28,7 +24,7 @@ exports.handler = async (event, context) => {
 
     const searchString = event.queryStringParameters.query;
 
-    const [rows, fields] = await promisePool.query(`select *
+    const [rows, fields] = await pool.query(`select *
                                             from themiche_wedding.Invitee
                                             where id in (select parent_id
                                                          from themiche_wedding.Invitee
@@ -46,8 +42,6 @@ exports.handler = async (event, context) => {
                                                    first_name = '${searchString}')
                                             ORDER BY CASE WHEN parent_id IS NULL THEN id ELSE parent_id END, id;`);
 
-    await pool.end();
-
     return {
       statusCode: 200,
       body: JSON.stringify(rows)
@@ -57,5 +51,7 @@ exports.handler = async (event, context) => {
       statusCode: 500,
       body: JSON.stringify({ error: error }),
     };
+  } finally {
+    pool.end();
   }
 };
