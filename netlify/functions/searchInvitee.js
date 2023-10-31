@@ -1,8 +1,6 @@
 // netlify/functions/searchInvitee.js
-// const { PrismaClient } = require('@prisma/client');
 
 exports.handler = async (event, context) => {
-  // const prisma = new PrismaClient();
   const mysql = require('mysql2');
 
   const dbConfig = {
@@ -27,12 +25,8 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({ error: 'Method Not Allowed' }),
       };
     }
-    console.log('here2')
-
 
     const searchString = event.queryStringParameters.query;
-    console.log('here3')
-
 
     const [rows, fields] = await promisePool.query(`select *
                                             from themiche_wedding.Invitee
@@ -51,7 +45,8 @@ exports.handler = async (event, context) => {
                                                or (full_name = '${searchString}' or last_name = '${searchString}' or
                                                    first_name = '${searchString}')
                                             ORDER BY CASE WHEN parent_id IS NULL THEN id ELSE parent_id END, id;`);
-    console.log('here4')
+
+    await pool.end();
 
     return {
       statusCode: 200,
@@ -62,7 +57,5 @@ exports.handler = async (event, context) => {
       statusCode: 500,
       body: JSON.stringify({ error: error }),
     };
-  } finally {
-    // await prisma.$disconnect();
   }
 };
