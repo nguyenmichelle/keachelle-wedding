@@ -11,7 +11,7 @@
     Access-Control-Allow-Origin = "*"
 
 [build]
-command = "npm run build && npm prisma generate"
+command = "npm run build && npm run prisma generate && npm run generate"
 publish = "dist"
 functions = "functions"
 
