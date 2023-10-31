@@ -3,6 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 
 exports.handler = async (event, context) => {
   const prisma = new PrismaClient();
+  console.log('here')
 
   try {
     if (event.httpMethod !== 'GET') {
@@ -11,8 +12,12 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({ error: 'Method Not Allowed' }),
       };
     }
+    console.log('here2')
+
 
     const searchString = event.queryStringParameters.query;
+    console.log('here3')
+
 
     const response = await prisma.$queryRaw`select *
                                             from themiche_wedding.Invitee
@@ -31,6 +36,7 @@ exports.handler = async (event, context) => {
                                                or (full_name = ${searchString} or last_name = ${searchString} or
                                                    first_name = ${searchString})
                                             ORDER BY CASE WHEN parent_id IS NULL THEN id ELSE parent_id END, id;`;
+    console.log('here4')
 
     return {
       statusCode: 200,
