@@ -191,7 +191,6 @@ export default {
           params: this.currentRsvpGroup,
         })
         this.loading = false
-        console.log('RSVP Updated:', response.data);
       } catch (error) {
         console.error('Error calling server method:', error)
       }

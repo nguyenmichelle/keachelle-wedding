@@ -4,10 +4,6 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  serverMiddleware: [
-    '~/api/index.js'
-  ],
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: 'Michelle & Keaton Wedding',
