@@ -70,7 +70,7 @@
                     ></v-text-field>
                   </v-col>
                   <v-col cols="4" class="ml-5">
-                    <v-btn outlined block class="mt-2" @click="sendEmail">Send</v-btn>
+                    <v-btn outlined block class="mt-2" @click="sendEmail" :loading="emailLoading" v-html="emailSent? 'Sent!' : 'Send' " :disabled="emailSent"></v-btn>
                   </v-col>
                 </v-row>
               </v-sheet>
@@ -101,7 +101,9 @@ export default {
       showEvents: false,
       page: 1,
       currentRsvpGroup: [],
-      firstTimeResponding: true
+      firstTimeResponding: true,
+      emailLoading: false,
+      emailSent: false
     }
   },
   computed:
@@ -198,6 +200,7 @@ export default {
       }
     },
     editRsvp () {
+      this.emailSent = false
       this.page = 1
       this.firstTimeResponding = true
 
@@ -211,8 +214,17 @@ export default {
         }
       })
     },
-    sendEmail() {
-      // TODO: implement this
+    async sendEmail() {
+      this.emailLoading = true
+      try {
+        const response = await axios.get('/.netlify/functions/sendMail', {
+          params: this.currentRsvpGroup,
+        })
+        this.emailSent = true
+        this.emailLoading = false
+      } catch (error) {
+        console.error('Error calling server method:', error)
+      }
     }
   }
 }
