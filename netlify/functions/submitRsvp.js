@@ -1,24 +1,23 @@
-const mysql = require('mysql2') // Use the promise version
+const mysql = require('mysql2')
 
 exports.handler = async function (event, context) {
-  const dbConfig = {
+  const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     ssl: {
-      // Provide SSL/TLS options here
-      // Example options (customize to match your SSL/TLS configuration):
       rejectUnauthorized: false
-    }}
-
-  const pool = mysql.createPool(dbConfig);
-  const promisePool = pool.promise();
-
+    },
+    waitForConnections: true,
+    connectionLimit: 10, // Adjust according to your needs
+    queueLimit: 0,
+  });
+  const promisePool = db.promise();
   const data = event.queryStringParameters
 
   try {
-    const updatePromises = Object.entries(data).map(async ([key, value]) => {
+    Object.entries(data).forEach(async function([key, value]) {
       let person = JSON.parse(value)
 
       const query = `
@@ -49,5 +48,5 @@ exports.handler = async function (event, context) {
       statusCode: 500,
       body: JSON.stringify({ error: 'An error occurred' }),
     }
-  } 
+  }
 }
