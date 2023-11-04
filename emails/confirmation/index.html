@@ -1,0 +1,136 @@
+<html>
+<head>
+  <style>
+    body {
+      background-image: linear-gradient(120deg, rgb(209, 219, 233), rgb(240, 250, 243));
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 'Helvetica Neue', Arial, sans-serif;
+      height: 50vh;
+      width: 100vw;
+    }
+
+    .wrapper {
+      width: 75%;
+      max-width: 600px;
+      margin: 8% auto;
+      background-color: white;
+    }
+
+    .box {
+      box-shadow: 0px 0px 10px #afc0d9;
+      background-color: #f7f6f3;
+      padding: 5px;
+      border-radius: .25rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+
+    h1 {
+      color: #74896F;
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 300;
+      color: black;
+    }
+
+    ul {
+      color: black;
+      font-weight: 300;
+      font-size: 20px;
+      list-style-type: none;
+      margin: -20px 0 0 0;
+      padding: 0;
+    }
+
+    .button {
+      font: bold 11px Arial;
+      text-decoration: none;
+      background-color: #74896F;
+      color: white;
+      padding: 2px 6px 2px 6px;
+      border-radius: 5px;
+      border: 1px solid black;
+      text-transform: uppercase;
+    }
+
+    #subscribe-result p {
+      margin-top: 35px;
+    }
+
+    @media only screen and (max-device-width: 480px) {
+      .img-responsive {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+<body style="background: #B8A283; color: white">
+<div class="wrapper">
+  <div class="box">
+    <a class="navbar-brand text-primary" href="http://www.michelleandkeaton.com" target="_blank">
+      <img  class="d-none d-lg-block navbar-brand__img img-responsive" src="https://github.com/nguyenmichelle/keachelle-wedding/blob/master/assets/logo.png?raw=true" alt="logo"  width="200"/>
+    </a>
+    <h1>RSVP Confirmation</h1>
+    <p style="padding: 20px;">Thank you for your RSVP to <br>Michelle & Keaton's wedding!<br><br>
+    <hr>
+    <br><br>
+    <h1>Welcome Party</h1>
+    <p><strong>Location</strong><br>
+      Royalton Riviera Canc&#250;n<br><br>
+      <strong>Wednesday, August 21, 2024</strong><br>
+      6:00pm - 7:00pm<br></p>
+      {{#if hasAttending1}}
+          <p style="text-decoration: underline;">Attending</p>
+          <ul>{{#each attending1}}
+            <li>{{full_name}}</li>
+            {{/each}}
+          </ul>
+      {{/if}}
+
+      {{#if hasNotAttending1}}
+    <p style="text-decoration: underline;">Not Attending</p>
+    <ul>{{#each notAttending1}}
+            <li>{{full_name}}</li>
+            {{/each}}
+          </ul>
+      {{/if}}<br><br>
+    <hr>
+    <br><br>
+    <h1>Wedding</h1>
+    <p><strong>Location</strong><br>
+      Jard&#237;n Del Mar<br><br>
+      <strong>Thursday, August 22, 2024</strong><br>
+
+      5:00pm - 1:00am<br></p>
+      {{#if hasAttending2}}
+    <p style="text-decoration: underline;">Attending</p>
+    <ul>{{#each attending2}}
+            <li>{{full_name}}</li>
+          {{/each}}
+          </ul>
+      {{/if}}
+
+      {{#if hasNotAttending2}}
+    <p style="text-decoration: underline;">Not Attending</p>
+    <ul>{{#each notAttending2}}
+            <li>{{full_name}}</li>
+            {{/each}}
+          </ul>
+      {{/if}}
+      <br><br>
+      <br><br>
+      <a style="padding: 10px; color: white;" href="http://www.michelleandkeaton.com" class="button" target="_blank">View Their Website</a>
+      <br><br>
+  </div>
+</div>
+</body>
+</html>

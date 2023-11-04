@@ -30,3 +30,9 @@ model Invitee {
   attending_wedding       Boolean?
   modify_date             DateTime?
 }
+
+model EmailLog {
+  email_log_id            Int       @id @default(autoincrement())
+  email                   String
+  sent_date               DateTime?
+}

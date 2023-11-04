@@ -9,12 +9,13 @@
     "generate": "nuxt generate"
   },
   "prisma": {
-    "seed": "node prisma/seed_1.js"
+    "seed": "node prisma/seed_2.js"
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
     "axios": "^0.21.1",
     "core-js": "^3.25.3",
+    "handlebars": "^4.7.8",
     "mysql": "^2.18.1",
     "mysql2": "^3.6.2",
     "net": "^1.0.2",
