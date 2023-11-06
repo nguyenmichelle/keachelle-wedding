@@ -218,13 +218,13 @@ export default {
       this.emailLoading = true
 
       try {
-        const response = await axios.post('/.netlify/functions/sendMail', {
+        const response = await axios.post('/.netlify/functions/sendMail', JSON.stringify({
             attending1: this.currentRsvpGroup.filter(person => person.attending_welcome_party == 1),
             notAttending1: this.currentRsvpGroup.filter(person => person.attending_welcome_party == 0),
             attending2: this.currentRsvpGroup.filter(person => person.attending_wedding == 1),
             notAttending2: this.currentRsvpGroup.filter(person => person.attending_wedding == 0),
             email: this.currentRsvpGroup[0].email
-      })
+      }))
         this.emailSent = true
         this.emailLoading = false
       } catch (error) {
