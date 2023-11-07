@@ -231,8 +231,6 @@ export default {
             'Content-Type': 'application/json'
           }
         })
-        console.log("Raw Response Data:", response.data);
-
         this.emailSent = true
         this.emailLoading = false
       } catch (error) {

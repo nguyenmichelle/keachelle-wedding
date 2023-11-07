@@ -9,10 +9,6 @@ async function handler(event) {
     };
   }
 
-  console.log('event.body')
-  console.log(event.body)
-  console.log('JSON.parse(event.body)')
-  console.log(JSON.parse(event.body))
   const requestBody = JSON.parse(event.body);
 
   const response = await fetch(`${process.env.URL}/.netlify/functions/emails/confirmation`, {
