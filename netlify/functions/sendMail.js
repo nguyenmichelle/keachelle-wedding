@@ -9,6 +9,10 @@ async function handler(event) {
     };
   }
 
+  console.log('event.body')
+  console.log(event.body)
+  console.log('JSON.parse(event.body)')
+  console.log(JSON.parse(event.body))
   const requestBody = JSON.parse(event.body);
 
   const response = await fetch(`${process.env.URL}/.netlify/functions/emails/confirmation`, {
@@ -50,7 +54,7 @@ async function handler(event) {
     const promisePool = db.promise();
 
     try {
-      promisePool.query('INSERT INTO EmailLog (email, sent_date) VALUES (?,?)', [requestBody.email, new Date()],(error, results) => {
+      await promisePool.query('INSERT INTO EmailLog (email, sent_date) VALUES (?,?)', [requestBody.email, new Date()],(error, results) => {
         if (error) return res.json({ error: error });
       });
 
