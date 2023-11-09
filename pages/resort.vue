@@ -25,7 +25,7 @@
     <Section title="Group Rates" background-color="var(--base-brown)" :has-padding="false" :white-text="true">
       <v-row align="center" justify="center">
         <v-col cols="8" class="text-center">
-          <span>We have locked these room rates for our guests. Please use the provided link to book your room. We <b>highly</b> recommend getting a room in the Diamond Club (DC) if possible. The DC will elevate your stay and includes: butler service, exclusive á la carte dining options + exclusive air-conditioned DC areas in restaurants, a stylish private lounge, private bars, a sparkling pool, a secluded beach area, and more.<br><br>*Note: Rates are per person, per night, per room depending on how many people are staying in a room.</span>
+          <span>We have locked these room rates for our guests. Please use the provided link to book your room. We <b>highly</b> recommend getting a room in the Diamond Club (DC) if possible. The DC will elevate your stay and includes: butler service, exclusive á la carte dining options + exclusive air-conditioned DC areas in restaurants, a stylish private lounge, private bars, a sparkling pool, a secluded beach area, and more.<br><br>*Note: Base rates are per person, per night, per room. Add-ons are per additional person per night per room depending on how many people are staying in a room.</span>
         </v-col>
       </v-row>
       <v-row align="center" justify="center">
@@ -34,13 +34,20 @@
             <template v-slot:default>
               <thead>
               <tr>
+                <th></th>
+                <th class="text-center border-left border-right" colspan="2">Base Rates</th>
+                <th class="text-center" colspan="6">Add-Ons</th>
+              </tr>
+              </thead>
+              <thead>
+              <tr>
                 <th class="text-left">
                   Room type
                 </th>
-                <th class="text-left">
+                <th class="text-left border-left">
                   1 guest
                 </th>
-                <th class="text-left">
+                <th class="text-left border-right">
                   2 guests
                 </th>
                 <th class="text-left">
@@ -69,8 +76,8 @@
                 :key="item.roomType"
               >
                 <td class="text-left" v-html="item.roomType"></td>
-                <td class="text-left">{{ item.singlePrice }}</td>
-                <td class="text-left">{{ item.dblPrice }}</td>
+                <td class="text-left border-left">{{ item.singlePrice }}</td>
+                <td class="text-left border-right">{{ item.dblPrice }}</td>
                 <td class="text-left">{{ item.tripleQuadPrice }}</td>
                 <td class="text-left" v-html="item.firstChildPrice"></td>
                 <td class="text-left">{{ item.secondChildPrice }}</td>
@@ -85,16 +92,10 @@
       </v-row>
       <v-row align="center" justify="center">
         <v-col cols="9">
-          <span>*Not all of these prices include taxes. There may be a 16% VAT (value added tax) on top of the listed
-            rates.<br><br><b>*How to read the chart</b>: Say Amy is staying in the <i>Luxury Suite with Terrace
+          <span>*These prices include taxes.<br><br><b>*How to read the chart</b>: Say Amy is staying in the <i>Luxury Suite with Terrace
           Jacuzzi</i> with
           2 other people (totaling 3 people occupancy) for 3 nights.
-          She looks at the chart for that room type and the price for 3/4 people in a room - which is $117.94. Since
-          that is the nightly price for one person per night, she multiplies that by 3 nights and the total she'll be
-          paying for the room is $353.82 before taxes. Each person will pay that price so the total for the room for 3
-          nights should be $1,061.46. Note that if a person was added to this room, the individual rate would stay the
-          same, so each person in the room would still only be responsible for $353.82, however, the room total would
-          increase to $1,415.28.</span>
+          First, the base price of 2 x $157.25 is calculated. Then she adds one more person for an additional $117.94 a night. $432.44 nightly (3 people) x 3 nights = $1297.32 total for the room of this type for 3 people.</span>
         </v-col>
       </v-row>
     </Section>
@@ -387,5 +388,13 @@ export default {
   .v-image__image {
     max-height: 150px;
   }
+}
+
+.border-left {
+  border-left: thin solid rgba(0, 0, 0, 0.12);
+}
+
+.border-right {
+  border-right: thin solid rgba(0, 0, 0, 0.12);
 }
 </style>
