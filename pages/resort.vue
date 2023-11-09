@@ -85,7 +85,7 @@
       </v-row>
       <v-row align="center" justify="center">
         <v-col cols="9">
-          <span>*These prices do not include taxes. There will be a 16% VAT (value added tax) on top of the listed
+          <span>*Not all of these prices not include taxes. There may be a 16% VAT (value added tax) on top of the listed
             rates.<br><br><b>*How to read the chart</b>: Say Amy is staying in the <i>Luxury Suite with Terrace
           Jacuzzi</i> with
           2 other people (totaling 3 people occupancy) for 3 nights.

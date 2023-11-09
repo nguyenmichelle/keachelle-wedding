@@ -9,7 +9,7 @@
     "generate": "nuxt generate"
   },
   "prisma": {
-    "seed": "node prisma/seed_2.js"
+    "seed": "node prisma/seed_3.js"
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
