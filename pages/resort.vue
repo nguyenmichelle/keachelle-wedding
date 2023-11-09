@@ -358,7 +358,7 @@ export default {
           secondTeenPrice: '$189.55'
         },
         {
-          roomType: 'Luxury Chairman ́s Two Bedroom Suite Ocean Front <b>DC</b>',
+          roomType: 'Luxury Chairman Two Bedroom Suite Ocean Front <b>DC</b>',
           singlePrice: '$1,279.26',
           dblPrice: '$639.63',
           tripleQuadPrice: '$255.85',
@@ -368,7 +368,7 @@ export default {
           secondTeenPrice: '$255.85'
         },
         {
-          roomType: 'Luxury Chairman ́s Three Bedroom Suite Ocean Front <b>DC</b>',
+          roomType: 'Luxury Chairman Three Bedroom Suite Ocean Front <b>DC</b>',
           singlePrice: '$1,661.76',
           dblPrice: '$830.88',
           tripleQuadPrice: '$332.35',
