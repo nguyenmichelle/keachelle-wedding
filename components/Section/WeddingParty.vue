@@ -9,7 +9,7 @@
         >
           <v-slide-group-item
             v-for="(person, index) in bridalParty"
-            :key="n"
+            :key="person.firstName"
             class="pa-2"
           >
             <v-card color="transparent" elevation="0"
@@ -39,7 +39,7 @@
         >
           <v-slide-group-item
             v-for="(person, index) in groomsmanParty"
-            :key="n"
+            :key="person.firstName"
             class="pa-2"
           >
             <v-card  color="transparent" elevation="0"
