@@ -2,7 +2,8 @@
   <Section id="details" background-color="var(--base-brown)" white-text="true" title="AUGUST 22, 2024">
     <v-row>
       <v-col cols="12" class="text-center">
-        <p><b>TEA CEREMONY</b> @ 11:00 AM<br>
+        <p><b>TEA CEREMONY</b> @ 1:00 PM<br>
+          <i>*Private Family Event Only</i><br>
           ROYALTON RIVIERA CANCÚN<br>
           77500 CANCÚN<br>
           QUINTANA ROO, MEXICO<br><br>
