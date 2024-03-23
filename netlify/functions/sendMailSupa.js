@@ -46,7 +46,7 @@ async function handler(event) {
     try {
       const { error } = await supabase
         .from('email_log')
-        .insert({ email: requestBody.email, send_date: newDate() })
+        .insert({ email: requestBody.email, send_date: new Date() })
 
       return {
         statusCode: 200,
