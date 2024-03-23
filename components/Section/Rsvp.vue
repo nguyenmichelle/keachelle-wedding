@@ -130,7 +130,7 @@ export default {
     async searchRecords () {
       this.loading = true
       try {
-        const response = await axios.get('/.netlify/functions/searchInvitee', {
+        const response = await axios.get('/.netlify/functions/searchInviteeSupa', {
           params: {
             query: this.query, // Replace with your value
           },
@@ -142,31 +142,23 @@ export default {
       }
     },
     organizeResultsIntoGroups (results) {
-      const groups = []
-      let currentGroup = []
-
-      for (const result of results) {
-        if (result.address_line_1 !== null) {
-          // Start a new group when an address is not null
-          if (currentGroup.length > 0) {
-            groups.push(currentGroup)
-          }
-          currentGroup = [result]
-        } else {
-          currentGroup.push(result)
+      results.forEach(result => {
+        result.group_id = result.parent_id? result.parent_id : result.id;
+      });
+      const groups = results.reduce((acc, obj) => {
+        const key = obj.group_id;
+        if (!acc[key]) {
+          acc[key] = [];
         }
-      }
-
-      // Push the last group
-      if (currentGroup.length > 0) {
-        groups.push(currentGroup)
-      }
+        acc[key].push(obj);
+        return acc;
+      }, {});
       return groups
     },
     async updateEvents (id) {
       this.loading = true
       try {
-        const response = await axios.get('/.netlify/functions/getFamilyMemberNames', {
+        const response = await axios.get('/.netlify/functions/getFamilyMemberNamesSupa', {
           params: {
             query: id, // Replace with your value
           },
@@ -191,7 +183,7 @@ export default {
     async submitRsvp () {
       this.loading = true
       try {
-        const response = await axios.get('/.netlify/functions/submitRsvp', {
+        const response = await axios.get('/.netlify/functions/submitRsvpSupa', {
           params: this.currentRsvpGroup,
         })
         this.loading = false
@@ -226,7 +218,7 @@ export default {
       })
 
       try {
-        const response = await axios.post('/.netlify/functions/sendMail', data, {
+        const response = await axios.post('/.netlify/functions/sendMailSupa', data, {
           headers: {
             'Content-Type': 'application/json'
           }
