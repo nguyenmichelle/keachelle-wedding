@@ -17,7 +17,7 @@ exports.handler = async function (event, context) {
 
       const { error } = await supabase
         .from('invitee')
-        .update({ attending_welcome_party: person.attending_welcome_party == 1 ? true : false, attending_wedding: person.attending_wedding == 1 ? true : false, modify_date: new Date() })
+        .update({ attending_welcome_party: person.attending_welcome_party == 1 ? true : false, attending_wedding: person.attending_wedding == 1 ? true : false, meal_preference: person.meal_preference, modify_date: new Date() })
         .eq('id', person.id)
 
       if (error) {
