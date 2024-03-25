@@ -43,6 +43,7 @@ exports.handler = async (event, context) => {
     const { data, error } = await supabase
       .from('invitee')
       .select('parent_id, full_name, first_name, id, last_name, address_line_1')
+      .not('id', 'in', '(1,63)')
       .or(`parent_id.in.(${ids.join(',')}), id.in.(${parentIds.join(',')}), parent_id.in.(${parentIds.join(',')}), first_name.eq.${searchString},full_name.eq.${searchString},last_name.eq.${searchString}`)
       .order('id', { ascending: true });
 
