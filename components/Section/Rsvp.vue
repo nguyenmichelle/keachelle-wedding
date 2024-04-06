@@ -121,7 +121,7 @@ export default {
             return obj.attending_welcome_party != null
           }
           if (page == 2) {
-            return obj.attending_wedding != null
+            return obj.attending_wedding != null && (obj.attending_wedding == false || (obj.attending_wedding == true && obj.meal_preference != null))
           }
         }).length == currentlyRsvpingLength
       }
