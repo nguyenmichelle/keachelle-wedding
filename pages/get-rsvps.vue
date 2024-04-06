@@ -64,6 +64,7 @@
         </v-data-table>
       </v-card-text>
     </v-card>
+    </div>
   </v-container>
 </template>
 
@@ -99,10 +100,30 @@
           return 0;
         });
 
+        const hasntResponded = this.originalResults.filter(x => x.attending_wedding == null).map(item => ({
+          Group: item.group_id,
+          Name: item.full_name,
+          'Attending Welcome Party': item.attending_welcome_party ? 'Yes' : item.attending_welcome_party == null? 'Not Set' : 'No',
+          'Attending Wedding': item.attending_wedding ? 'Yes' : item.attending_wedding == null? 'Not Set' : 'No',
+          'Email Address': item.email
+        })).sort((a, b) => {
+          if (a.Group < b.Group) {
+            return -1;
+          }
+          if (a.Group > b.Group) {
+            return 1;
+          }
+          return 0;
+        });
+
 
         const worksheet = XLSX.utils.json_to_sheet(exportData);
         const workbook = XLSX.utils.book_new();
+
+        const hasntRespondedSheet = XLSX.utils.json_to_sheet(hasntResponded);
+
         XLSX.utils.book_append_sheet(workbook, worksheet, 'RSVPs');
+        XLSX.utils.book_append_sheet(workbook, hasntRespondedSheet, 'Has Not Responded');
         XLSX.writeFile(workbook, `Michelle Keaton RSVPs ${new Date().toISOString()}.xlsx`);
       }
     },
