@@ -19,6 +19,7 @@
           <v-subheader class="rsvp-statistic" @click="results = originalResults.filter(item => item.meal_preference == 'Beef')"><b>Beef:</b> {{ originalResults.filter(item => item.meal_preference == 'Beef').length }}</v-subheader>
           <v-subheader class="rsvp-statistic" @click="results = originalResults.filter(item => item.meal_preference == 'Chicken')"><b>Chicken:</b> {{ originalResults.filter(item => item.meal_preference == 'Chicken').length }}</v-subheader>
           <v-subheader class="rsvp-statistic" @click="results = originalResults.filter(item => item.meal_preference == 'Vegan')"><b>Vegan:</b> {{ originalResults.filter(item => item.meal_preference == 'Vegan').length }}</v-subheader>
+          <v-subheader class="rsvp-statistic" @click="results = originalResults.filter(item => item.meal_preference == 'Kids')"><b>Kids Meal:</b> {{ originalResults.filter(item => item.meal_preference == 'Kid').length }}</v-subheader>
           <v-subheader class="rsvp-statistic" @click="results = originalResults.filter(item => item.meal_preference == 'None (Infant)')"><b>None/Infant:</b> {{ originalResults.filter(item => item.meal_preference == 'None (Infant)').length }}</v-subheader>
           <v-subheader class="rsvp-statistic" @click="results = originalResults.filter(item => item.meal_preference == null & item.attending_wedding)"><b>Hasn't Set Meal Preference:</b> {{ originalResults.filter(item => item.meal_preference == null && item.attending_wedding).length }}</v-subheader>
         </v-toolbar>
