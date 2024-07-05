@@ -9,19 +9,23 @@ const supabase = createClient(supabaseUrl, supabaseKey, {
 });
 
 async function getIds (searchString) {
+  const searchArray = searchString.split(/\s+/);
+
   const { data, idsError } = await supabase
     .from('invitee')
     .select('id')
-    .or(`first_name.eq.${searchString},full_name.eq.${searchString},last_name.eq.${searchString}`);
+    .or(`first_name.eq.${searchString},full_name.eq.${searchString},last_name.eq.${searchString},and(first_name.ilike.${searchArray[0]}%,last_name.eq.${searchArray[searchArray.length - 1]})`);
 
   return data.map(a=>a.id)
 }
 
 async function getParentIds (searchString) {
+  const searchArray = searchString.split(/\s+/);
+
   const { data, idsError } = await supabase
     .from('invitee')
     .select('parent_id')
-    .or(`first_name.eq.${searchString},full_name.eq.${searchString},last_name.eq.${searchString}`);
+    .or(`first_name.eq.${searchString},full_name.eq.${searchString},last_name.eq.${searchString},and(first_name.ilike.${searchArray[0]}%,last_name.eq.${searchArray[searchArray.length - 1]})`);
 
   return data.map(a => a.parent_id ? a.parent_id : 3000);
 }
