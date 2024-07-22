@@ -49,14 +49,7 @@
           <br>We recommend reserving a shuttle ahead of time to transport you from the airport to the resort. Ubers and
           other rideshares are strictly prohibited at Mexican airports and resorts and will not be available to provide
           transportation. There are many shuttle companies available in Cancún.<br><br> We have received discounted group rates
-          from the Bon Voyage shuttle company if you are interested in booking with them.</p><br>
-
-        <v-btn :elevation="0"
-               href="https://bookings.bonvoyagedmc.com/reservation/ae7979c2-2a10-4ef0-a687-209d412c4f51"
-               target="_blank">
-          Rent a Ride
-        </v-btn>
-
+          from a few different shuttle companies. If you are interested in booking with them, please reach out to the bride.</p><br>
       </v-col>
     </v-row>
   </Section>
