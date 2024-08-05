@@ -89,7 +89,8 @@
           Name: item.full_name,
           'Attending Welcome Party': item.attending_welcome_party ? 'Yes' : item.attending_welcome_party == null? 'Not Set' : 'No',
           'Attending Wedding': item.attending_wedding ? 'Yes' : item.attending_wedding == null? 'Not Set' : 'No',
-          'Meal Preference': item.meal_preference || 'Not Set'
+          'Meal Preference': item.meal_preference || 'Not Set',
+          'Email Address': item.email
         })).sort((a, b) => {
           if (a.Group < b.Group) {
             return -1;
