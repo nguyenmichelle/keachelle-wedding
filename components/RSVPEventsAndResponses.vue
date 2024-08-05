@@ -84,7 +84,7 @@ export default {
           title: 'Church Ceremony + <br>Wedding Reception',
           time: '<b>Thursday, August 22, 2024</b><br>Ceremony // 5:00 PM - 6:00 PM<br>Cocktail Hour // 6:00 PM - 7:00 PM<br>Reception // 7:00 PM - 1:00 AM',
           place: 'Jardín del Mar<br>Carretera Federal 307 Cancun-Playa del Carmen Km 332,15, SM31, MZ 03, Cancún, Mexico',
-          attire: 'Cocktail formal attire<br>The theme is <b>floral paradise</b>'
+          attire: 'Beach semi-formal attire<br>The theme is <b>floral paradise</b>'
         }
       }
     }
